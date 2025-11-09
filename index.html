@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#3a86ff" />
+  <title>هيا نتعلم يا جدي — الصف الأول</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preload" href="assets/sounds/cheer.mp3" as="audio" />
+  <link rel="preload" href="assets/sounds/correct.mp3" as="audio" />
+  <link rel="preload" href="assets/sounds/wrong.mp3" as="audio" />
+</head>
+<body>
+  <header class="topbar fade-in">
+    <div class="lesson-title">هيا نتعلم يا جدي</div>
+    <div class="unit">الوحدة الأولى — الصف الأول الابتدائي</div>
+  </header>
+
+  <!-- شريط التقدم العام -->
+  <div class="progress-wrap fade-in">
+    <div class="progress"><div class="bar" id="progress-bar"></div></div>
+    <div class="progress-text" id="progress-text">التقدم: خطوة 1 من 6</div>
+    <!-- شريط محاولات مدمج أعلى الصفحة -->
+    <div class="score-inline" aria-label="شريط المحاولات">
+      <span class="score-item">✅ <span id="score-correct">0</span></span>
+      <span class="score-item">❌ <span id="score-wrong">0</span></span>
+    </div>
+  </div>
+  <!-- حاوية المحتوى الديناميكي -->
+  <main id="content-root" role="main" aria-live="polite"></main>
+
+  <div id="confetti" aria-hidden="true"></div>
+
+  
+
+  
+
+  
+
+  <script src="app.js" defer></script>
+  <script src="partials-bundle.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
